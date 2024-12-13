@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageDTO {
+public abstract class MessageDTO {
     private String message;
     private Date timestamp;
 }

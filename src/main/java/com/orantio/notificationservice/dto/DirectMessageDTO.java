@@ -15,7 +15,7 @@ public class DirectMessageDTO extends MessageDTO {
 
     @Override
     public String toString() {
-        return "ServerMessageDTO{" +
+        return "DirectMessageDTO{" +
                 "senderAvatarURL='" + senderAvatarURL + '\'' +
                 ", senderName='" + senderName + '\'' +
                 ", message='" + getMessage() + '\'' +
