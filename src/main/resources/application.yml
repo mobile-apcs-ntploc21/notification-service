@@ -6,6 +6,3 @@ spring:
     port: ${RABBITMQ_PORT:8080}
     username: ${RABBITMQ_USERNAME:abc}
     password: ${RABBITMQ_PASSWORD:xyz}
-    message-queue-name: message
-    email-queue-name: email
-    exchange-name: notification
