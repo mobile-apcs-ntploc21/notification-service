@@ -1,4 +1,4 @@
-package com.orantio.notificationservice.dto;
+package com.orantio.notificationservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DirectMessageDTO extends MessageDTO {
-    private String senderName;
+public class DirectMessage extends Message {
     private String senderAvatarURL;
 
     @Override
     public String toString() {
         return "DirectMessageDTO{" +
                 "senderAvatarURL='" + senderAvatarURL + '\'' +
-                ", senderName='" + senderName + '\'' +
+                ", senderName='" + getSenderName() + '\'' +
                 ", message='" + getMessage() + '\'' +
                 ", timestamp=" + getTimestamp() +
+                ", recipientTokens=" + getRecipientTokens() +
                 '}';
     }
 }
