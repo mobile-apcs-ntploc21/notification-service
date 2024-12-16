@@ -8,4 +8,4 @@ spring:
     password: ${RABBITMQ_PASSWORD:xyz}
 
 firebase:
-  google-credentials: src/main/resources/fcm-key.json
+  google-credentials: fcm-key.json

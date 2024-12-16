@@ -1,4 +1,4 @@
-package com.orantio.notificationservice.dto;
+package com.orantio.notificationservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ServerMessageDTO extends MessageDTO {
+public class ServerMessage extends Message {
     private String serverAvatarURL;
     private String serverName;
     private String channelName;
@@ -20,6 +20,7 @@ public class ServerMessageDTO extends MessageDTO {
                 "serverAvatarURL='" + serverAvatarURL + '\'' +
                 ", serverName='" + serverName + '\'' +
                 ", channelName='" + channelName + '\'' +
+                ", senderName='" + getSenderName() + '\'' +
                 ", message='" + getMessage() + '\'' +
                 ", timestamp=" + getTimestamp() +
                 '}';
