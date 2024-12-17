@@ -12,20 +12,23 @@ import java.util.List;
 @Slf4j
 @Service
 public class FirebaseService {
-    public void subscribeTopic(String topic, List<String> deviceTokens) throws FirebaseMessagingException {
+    public TopicManagementResponse subscribeTopic(String topic, List<String> deviceTokens) throws FirebaseMessagingException {
         TopicManagementResponse response = FirebaseMessaging.getInstance().subscribeToTopic(deviceTokens, topic);
         log.info("Topic " + topic + " has been subscribed to " + response.getSuccessCount() + " devices");
+        return response;
     }
 
-    public void unsubscribeTopic(String topic, List<String> deviceTokens) throws FirebaseMessagingException {
+    public TopicManagementResponse unsubscribeTopic(String topic, List<String> deviceTokens) throws FirebaseMessagingException {
         TopicManagementResponse response = FirebaseMessaging.getInstance().unsubscribeFromTopic(deviceTokens, topic);
         log.info("Topic " + topic + " has been unsubscribed from " + response.getSuccessCount() + " devices");
+        return response;
     }
 
-    public void sendNotification(NotificationRequest request) throws FirebaseMessagingException {
+    public String sendNotification(NotificationRequest request) throws FirebaseMessagingException {
         Message message = getPreconfiguredMessageBuilder(request).setTopic(request.getTopic()).build();
         String response = FirebaseMessaging.getInstance().send(message);
         log.info("Sent message to topic. Topic: " + request.getTopic() + ", " + response);
+        return response;
     }
 
     private AndroidConfig getAndroidConfig(String topic) {
